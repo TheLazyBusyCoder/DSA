@@ -1,8 +1,10 @@
 # Topics to learn
 
+✅❎
+
 ## Beginner Level:
 
-1. Arrays and Lists: Basic array operations, searching, and sorting.
+1. ✅ Arrays and Lists: Basic array operations, searching, and sorting.
 2. Simple Math: Understanding basic math operations and number theory.
 3. Strings: String manipulation, pattern matching, and basic algorithms like counting sort.
 4. Recursion: Understanding and implementing recursive functions.
