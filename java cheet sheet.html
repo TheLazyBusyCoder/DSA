@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java DSA Cheat Sheet</title>
+<style>
+  body {
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    color: #222;
+    margin: 0;
+    padding: 20px;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+  pre {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+  code { color: #0077aa; }
+  ul { list-style-type: square; padding-left: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Java DSA Complete Cheat Sheet</h1>
+
+<h2>1. Basics</h2>
+<pre><code>int a = 5, b = 10;
+Math.max(a,b); Math.min(a,b);
+Math.pow(2,3); Math.sqrt(16);
+String s = "abc";
+s.charAt(0); s.substring(1,2); s.length();
+</code></pre>
+
+<h2>2. Arrays</h2>
+<pre><code>int[] arr = {1,2,3};
+Arrays.sort(arr);
+Arrays.fill(arr, 0);
+Arrays.copyOf(arr, n);
+Arrays.binarySearch(arr, key);
+</code></pre>
+
+<h2>3. ArrayList</h2>
+<pre><code>ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+list.add(5); list.get(0);
+Collections.sort(list);
+</code></pre>
+
+<h2>4. Stack & Queue</h2>
+<pre><code>Stack&lt;Integer&gt; st = new Stack&lt;&gt;();
+st.push(1); st.pop(); st.peek();
+
+Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();
+q.add(1); q.remove(); q.peek();
+</code></pre>
+
+<h2>5. PriorityQueue (Heaps)</h2>
+<pre><code>PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;(); // min-heap
+pq.add(10); pq.add(5);
+pq.peek(); pq.poll();
+
+PriorityQueue&lt;Integer&gt; maxPQ = new PriorityQueue&lt;&gt;(Collections.reverseOrder());
+</code></pre>
+
+<h2>6. HashMap & HashSet</h2>
+<pre><code>HashMap&lt;Integer,String&gt; map = new HashMap&lt;&gt;();
+map.put(1,"A");
+map.get(1);
+for(Map.Entry&lt;Integer,String&gt; e : map.entrySet()) {
+    System.out.println(e.getKey() + " " + e.getValue());
+}
+
+HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();
+set.add(10); set.contains(10);
+</code></pre>
+
+<h2>7. StringBuilder</h2>
+<pre><code>StringBuilder sb = new StringBuilder("abc");
+sb.append("d");
+sb.reverse();
+sb.toString();
+</code></pre>
+
+<h2>8. Recursion Template</h2>
+<pre><code>void solve(int i, int n) {
+    if(i > n) return;
+    solve(i+1, n);
+}
+</code></pre>
+
+<h2>9. Binary Search Template</h2>
+<pre><code>int binarySearch(int[] arr, int key) {
+    int low = 0, high = arr.length - 1;
+    while(low <= high) {
+        int mid = low + (high - low)/2;
+        if(arr[mid] == key) return mid;
+        else if(arr[mid] < key) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+}
+</code></pre>
+
+<h2>10. Two Pointer Pattern</h2>
+<pre><code>int i = 0, j = arr.length - 1;
+while(i < j) {
+    int sum = arr[i] + arr[j];
+    if(sum == target) break;
+    else if(sum < target) i++;
+    else j--;
+}
+</code></pre>
+
+<h2>11. Prefix Sum</h2>
+<pre><code>int[] prefix = new int[n];
+prefix[0] = arr[0];
+for(int i=1; i&lt;n; i++) prefix[i] = prefix[i-1] + arr[i];
+// Range sum [l, r]: prefix[r] - prefix[l-1]
+</code></pre>
+
+<h2>12. Kadane’s Algorithm (Max Subarray Sum)</h2>
+<pre><code>int maxSum = arr[0], cur = arr[0];
+for(int i=1; i&lt;arr.length; i++) {
+    cur = Math.max(arr[i], cur + arr[i]);
+    maxSum = Math.max(maxSum, cur);
+}
+</code></pre>
+
+<h2>13. Custom Sorting (Comparator)</h2>
+<pre><code>Arrays.sort(arr, (a,b) -> a[0] - b[0]);
+Collections.sort(list, (a,b) -> a.x - b.x);
+</code></pre>
+
+<h2>14. Tree Basics</h2>
+<pre><code>class Node {
+    int val;
+    Node left, right;
+    Node(int v) { val = v; }
+}
+
+void inorder(Node root) {
+    if(root == null) return;
+    inorder(root.left);
+    System.out.print(root.val + " ");
+    inorder(root.right);
+}
+</code></pre>
+
+<h2>15. Graph Templates</h2>
+<pre><code>void dfs(int node, boolean[] vis, ArrayList&lt;ArrayList&lt;Integer&gt;&gt; adj) {
+    vis[node] = true;
+    for(int it : adj.get(node))
+        if(!vis[it]) dfs(it, vis, adj);
+}
+
+void bfs(int start, ArrayList&lt;ArrayList&lt;Integer&gt;&gt; adj) {
+    Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();
+    boolean[] vis = new boolean[adj.size()];
+    vis[start] = true;
+    q.add(start);
+    while(!q.isEmpty()) {
+        int node = q.poll();
+        for(int it : adj.get(node))
+            if(!vis[it]) { vis[it] = true; q.add(it); }
+    }
+}
+</code></pre>
+
+<h2>16. Disjoint Set (Union-Find)</h2>
+<pre><code>class DSU {
+    int[] parent, rank;
+    DSU(int n) {
+        parent = new int[n];
+        rank = new int[n];
+        for(int i=0; i&lt;n; i++) parent[i] = i;
+    }
+    int find(int x) {
+        if(parent[x] != x) parent[x] = find(parent[x]);
+        return parent[x];
+    }
+    void union(int x, int y) {
+        int px = find(x), py = find(y);
+        if(px == py) return;
+        if(rank[px] &lt; rank[py]) parent[px] = py;
+        else if(rank[px] &gt; rank[py]) parent[py] = px;
+        else { parent[py] = px; rank[px]++; }
+    }
+}
+</code></pre>
+
+<h2>17. Topological Sort (Kahn’s Algorithm)</h2>
+<pre><code>void topoSort(int V, ArrayList&lt;ArrayList&lt;Integer&gt;&gt; adj) {
+    int[] indeg = new int[V];
+    for(int i=0;i&lt;V;i++) for(int it:adj.get(i)) indeg[it]++;
+    Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();
+    for(int i=0;i&lt;V;i++) if(indeg[i]==0) q.add(i);
+    while(!q.isEmpty()) {
+        int node = q.poll();
+        System.out.print(node+" ");
+        for(int it:adj.get(node))
+            if(--indeg[it]==0) q.add(it);
+    }
+}
+</code></pre>
+
+<h2>18. Dynamic Programming Templates</h2>
+<pre><code>// Memoization
+int f(int i, int[] dp) {
+    if(i <= 1) return i;
+    if(dp[i] != -1) return dp[i];
+    return dp[i] = f(i-1, dp) + f(i-2, dp);
+}
+
+// Tabulation
+int fib(int n) {
+    int[] dp = new int[n+1];
+    dp[0]=0; dp[1]=1;
+    for(int i=2;i&lt;=n;i++)
+        dp[i] = dp[i-1] + dp[i-2];
+    return dp[n];
+}
+</code></pre>
+
+<h2>19. Common Complexities</h2>
+<ul>
+  <li>Array access: O(1)</li>
+  <li>Array search: O(n)</li>
+  <li>Binary search: O(log n)</li>
+  <li>Sorting: O(n log n)</li>
+  <li>HashMap/Set ops: O(1) avg</li>
+  <li>DFS/BFS: O(V + E)</li>
+  <li>Union-Find: ~O(α(n))</li>
+</ul>
+
+<hr>
+<p style="text-align:center;">Made for fast offline Java DSA reference ❤️</p>
+
+</body>
+</html>
