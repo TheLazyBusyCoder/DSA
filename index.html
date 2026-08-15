@@ -19,185 +19,233 @@
 
 <script>
 const data = [
-{
-day: "Day 1-2",
-title: "Arrays + Hashing",
-topics: [
-"Frequency map (counting)",
-"Two sum / variants",
-"Group anagrams",
-"Top K frequent elements"
-]
-},
-{
-day: "Day 3-4",
-title: "Two Pointers",
-topics: [
-"Pair sum sorted",
-"3Sum",
-"Remove duplicates in-place",
-"Container with most water"
-]
-},
-{
-day: "Day 5-6",
-title: "Sliding Window",
-topics: [
-"Max sum subarray",
-"Longest substring without repeating",
-"Minimum window substring",
-"Fixed vs variable window"
-]
-},
-{
-day: "Day 7",
-title: "Prefix Sum",
-topics: [
-"Range sum queries",
-"Subarray sum equals K",
-"Continuous subarray sum",
-"Prefix + hashmap combo"
-]
-},
-{
-day: "Day 8-9",
-title: "Binary Search",
-topics: [
-"Classic binary search",
-"First/last occurrence",
-"Search in rotated array",
-"Binary search on answer (VERY IMPORTANT)"
-]
-},
-{
-day: "Day 10-11",
-title: "Recursion + Backtracking",
-topics: [
-"Subsets",
-"Permutations",
-"Combination sum",
-"Backtracking template (choose-explore-unchoose)"
-]
-},
-{
-day: "Day 12-13",
-title: "Trees",
-topics: [
-"DFS (inorder, preorder, postorder)",
-"Level order (BFS)",
-"Height / diameter",
-"Lowest Common Ancestor"
-]
-},
-{
-day: "Day 14-15",
-title: "Graphs",
-topics: [
-"BFS / DFS traversal",
-"Cycle detection",
-"Connected components",
-"Grid problems (islands)"
-]
-},
-{
-day: "Day 16",
-title: "Topological Sort",
-topics: [
-"Kahn’s algorithm",
-"DFS topo sort",
-"Course schedule problems"
-]
-},
-{
-day: "Day 17",
-title: "Union Find (DSU)",
-topics: [
-"Path compression",
-"Union by rank",
-"Cycle detection",
-"Connected components optimization"
-]
-},
-{
-day: "Day 18-19",
-title: "Heap / Priority Queue",
-topics: [
-"Top K elements",
-"Kth largest/smallest",
-"Merge k sorted lists",
-"Heap vs sorting"
-]
-},
-{
-day: "Day 20",
-title: "Greedy",
-topics: [
-"Interval scheduling",
-"Jump game",
-"Gas station",
-"When greedy works (key insight)"
-]
-},
-{
-day: "Day 21-24",
-title: "Dynamic Programming",
-topics: [
-"1D DP (climbing stairs, house robber)",
-"2D DP (grid paths)",
-"Knapsack pattern",
-"LIS (important)",
-"LCS (important)",
-"State transition thinking"
-]
-},
-{
-day: "Day 25",
-title: "Monotonic Stack",
-topics: [
-"Next greater element",
-"Daily temperatures",
-"Largest rectangle in histogram"
-]
-},
-{
-day: "Day 26",
-title: "Bit Manipulation",
-topics: [
-"XOR basics",
-"Single number",
-"Bit masking for subsets",
-"Power of 2 tricks"
-]
-},
-{
-day: "Day 27",
-title: "Trie",
-topics: [
-"Insert/search",
-"Prefix matching",
-"Word search problems"
-]
-},
-{
-day: "Day 28",
-title: "Intervals",
-topics: [
-"Merge intervals",
-"Insert interval",
-"Meeting rooms",
-"Overlap logic"
-]
-},
-{
-day: "Day 29-30",
-title: "Revision + Mixed",
-topics: [
-"Random problems from all patterns",
-"Focus on weak areas",
-"Timed practice (important)",
-"Mock interviews"
-]
-}
+  {
+    day: "Day 1-2",
+    title: "Arrays + Hashing",
+    topics: [
+      "Array",
+      "Hash Table",
+      "Counting",
+      "Frequency maps",
+      "Two Sum",
+      "Group Anagrams"
+    ]
+  },
+  {
+    day: "Day 3-4",
+    title: "Strings + Two Pointers",
+    topics: [
+      "String",
+      "Two Pointers",
+      "String manipulation",
+      "Palindrome problems",
+      "String matching basics"
+    ]
+  },
+  {
+    day: "Day 5-6",
+    title: "Sliding Window + Prefix Sum",
+    topics: [
+      "Sliding Window",
+      "Fixed vs variable window",
+      "Prefix Sum",
+      "Subarray Sum",
+      "Prefix Sum + Hash Map"
+    ]
+  },
+  {
+    day: "Day 7",
+    title: "Stack + Queue",
+    topics: [
+      "Stack",
+      "Queue",
+      "Bracket Sequences",
+      "Monotonic Stack basics",
+      "Floyd's Cycle Finding Algorithm"
+    ]
+  },
+  {
+    day: "Day 8-9",
+    title: "Binary Search + Sorting",
+    topics: [
+      "Binary Search",
+      "First/last occurrence",
+      "Binary Search on Answer",
+      "Merge Sort",
+      "Quick Sort",
+      "Counting Sort"
+    ]
+  },
+  {
+    day: "Day 10-11",
+    title: "Linked List + Recursion",
+    topics: [
+      "Linked List",
+      "Doubly-Linked List",
+      "Recursion",
+      "Reverse Linked List",
+      "Fast and slow pointers",
+      "Recursive problem solving"
+    ]
+  },
+  {
+    day: "Day 12-13",
+    title: "Trees + Binary Trees",
+    topics: [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "BFS",
+      "Inorder / Preorder / Postorder",
+      "Height / Diameter",
+      "Lowest Common Ancestor"
+    ]
+  },
+  {
+    day: "Day 14-15",
+    title: "Graphs",
+    topics: [
+      "Graph Theory",
+      "DFS",
+      "BFS",
+      "Connected Components",
+      "Cycle Detection",
+      "Grid Problems",
+      "Graph Coloring"
+    ]
+  },
+  {
+    day: "Day 16",
+    title: "Topological Sort + DAG",
+    topics: [
+      "Topological Sort",
+      "Directed Acyclic Graph",
+      "Kahn's Algorithm",
+      "DFS Topological Sort",
+      "Course Schedule Problems"
+    ]
+  },
+  {
+    day: "Day 17",
+    title: "Union-Find",
+    topics: [
+      "Union-Find",
+      "Path Compression",
+      "Union by Rank",
+      "Cycle Detection",
+      "Connected Components"
+    ]
+  },
+  {
+    day: "Day 18-19",
+    title: "Heap + Priority Queue",
+    topics: [
+      "Heap (Priority Queue)",
+      "Top K Elements",
+      "Kth Largest / Smallest",
+      "Merge K Sorted Lists",
+      "Heap vs Sorting"
+    ]
+  },
+  {
+    day: "Day 20",
+    title: "Greedy",
+    topics: [
+      "Greedy",
+      "Interval Scheduling",
+      "Jump Game",
+      "Gas Station",
+      "Greedy Decision Making"
+    ]
+  },
+  {
+    day: "Day 21-24",
+    title: "Dynamic Programming",
+    topics: [
+      "Dynamic Programming",
+      "Memoization",
+      "1D DP",
+      "2D DP",
+      "Knapsack",
+      "LIS",
+      "LCS",
+      "State Transition"
+    ]
+  },
+  {
+    day: "Day 25",
+    title: "Advanced Stack + Queue",
+    topics: [
+      "Monotonic Stack",
+      "Monotonic Queue",
+      "Next Greater Element",
+      "Daily Temperatures",
+      "Largest Rectangle in Histogram"
+    ]
+  },
+  {
+    day: "Day 26",
+    title: "Bit Manipulation + Math",
+    topics: [
+      "Bit Manipulation",
+      "Bitmask",
+      "XOR",
+      "Power of 2",
+      "Greatest Common Divisor",
+      "Least Common Multiple",
+      "Prime Number Sieve"
+    ]
+  },
+  {
+    day: "Day 27",
+    title: "Trie + String Algorithms",
+    topics: [
+      "Trie",
+      "Prefix Matching",
+      "String Matching",
+      "Rolling Hash",
+      "Knuth-Morris-Pratt Algorithm",
+      "Z Algorithm"
+    ]
+  },
+  {
+    day: "Day 28",
+    title: "Advanced Trees + Range Queries",
+    topics: [
+      "Segment Tree",
+      "Binary Indexed Tree",
+      "Sparse Table",
+      "Binary Search Tree",
+      "Binary Lifting"
+    ]
+  },
+  {
+    day: "Day 29",
+    title: "Advanced Graph Algorithms",
+    topics: [
+      "Shortest Path",
+      "Dijkstra's Algorithm",
+      "Bellman-Ford Algorithm",
+      "Floyd-Warshall Algorithm",
+      "Minimum Spanning Tree",
+      "Kruskal's Algorithm",
+      "Prim's Algorithm"
+    ]
+  },
+  {
+    day: "Day 30",
+    title: "Advanced Algorithms + Revision",
+    topics: [
+      "Backtracking",
+      "Divide and Conquer",
+      "Combinatorics",
+      "Game Theory",
+      "Maximum Flow",
+      "Strongly Connected Components",
+      "Random Problems",
+      "Mock Interviews"
+    ]
+  }
 ];
 
 const container = document.getElementById("roadmap");
